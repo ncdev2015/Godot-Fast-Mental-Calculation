@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/Poppins-Bold.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 55
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 27
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 1 )
+
+[node name="Menu" type="Node2D"]
+
+[node name="Title" type="Label" parent="."]
+margin_left = 238.142
+margin_top = 87.4532
+margin_right = 752.142
+margin_bottom = 165.453
+custom_fonts/font = SubResource( 1 )
+text = "Simon Says Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Subtitle" type="Label" parent="."]
+margin_left = 220.651
+margin_top = 203.16
+margin_right = 805.651
+margin_bottom = 242.16
+custom_fonts/font = SubResource( 2 )
+text = "How time can you memory the secuence?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="."]
+margin_left = 398.473
+margin_top = 433.163
+margin_right = 656.473
+margin_bottom = 508.163
+custom_fonts/font = SubResource( 3 )
+text = "START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BestScore" type="Label" parent="."]
+margin_left = 454.756
+margin_top = 298.686
+margin_right = 568.756
+margin_bottom = 357.686
+custom_fonts/font = SubResource( 4 )
+text = "Best Score:
+0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
