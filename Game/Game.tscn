@@ -1,0 +1,308 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Fonts/Poppins-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Game/Game.gd" type="Script" id=2]
+[ext_resource path="res://Game/AnswerStatus.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 65
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0313726, 0.533333, 0.980392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0313726, 0.533333, 0.980392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.0980392, 0.552941, 0.956863, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 36
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 21
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 95
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0, 0.427451, 0.835294, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0, 0.427451, 0.835294, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0, 0.372549, 0.729412, 1 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0, 0.427451, 0.835294, 1 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0, 0.427451, 0.835294, 1 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Equation" type="Label" parent="."]
+margin_left = 182.366
+margin_top = 289.719
+margin_right = 371.366
+margin_bottom = 381.719
+custom_fonts/font = SubResource( 1 )
+text = "1 + 1 = "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answer" type="TextEdit" parent="."]
+margin_left = 386.561
+margin_top = 293.647
+margin_right = 603.561
+margin_bottom = 385.647
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 2 )
+highlight_current_line = true
+context_menu_enabled = false
+minimap_draw = true
+minimap_width = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Check" type="Button" parent="."]
+margin_left = 654.112
+margin_top = 294.828
+margin_right = 888.112
+margin_bottom = 384.828
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+text = "Check"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NumberEquation" type="Label" parent="."]
+margin_left = 370.912
+margin_top = 95.1447
+margin_right = 628.912
+margin_bottom = 151.145
+custom_fonts/font = SubResource( 7 )
+text = "Equation 1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerLabel" type="Label" parent="."]
+margin_left = 901.275
+margin_top = 24.9956
+margin_right = 1001.27
+margin_bottom = 108.996
+custom_fonts/font = SubResource( 8 )
+text = "30"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CorrectAnswers" type="Label" parent="."]
+margin_left = 31.3596
+margin_top = 22.807
+margin_right = 268.36
+margin_bottom = 58.807
+custom_fonts/font = SubResource( 9 )
+text = "Corrects: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+
+[node name="BestMark" type="Label" parent="."]
+margin_left = 415.776
+margin_top = 489.156
+margin_right = 603.776
+margin_bottom = 532.156
+custom_fonts/font = SubResource( 10 )
+text = "Best Mark: 0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTypeYourAnswer" type="Label" parent="."]
+margin_left = 380.57
+margin_top = 212.938
+margin_right = 578.57
+margin_bottom = 243.938
+custom_fonts/font = SubResource( 11 )
+text = "Type your answer:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnswerStatus" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="AnswerStatus"]
+modulate = Color( 1, 1, 1, 0.862745 )
+margin_right = 1023.0
+margin_bottom = 599.0
+color = Color( 0.203922, 0.203922, 0.203922, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="AnswerStatus"]
+margin_left = 287.923
+margin_top = 244.869
+margin_right = 759.923
+margin_bottom = 384.869
+custom_fonts/font = SubResource( 12 )
+text = "Excellent!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="AnswerStatus"]
+
+[node name="LabelCorrectAnswer" type="Label" parent="AnswerStatus"]
+margin_left = 409.506
+margin_top = 361.465
+margin_right = 611.506
+margin_bottom = 456.465
+custom_fonts/font = SubResource( 13 )
+text = "Answer:
+0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerOver" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRectTimeOver" type="ColorRect" parent="TimerOver"]
+modulate = Color( 1, 1, 1, 0.862745 )
+margin_right = 1023.0
+margin_bottom = 599.0
+color = Color( 0.203922, 0.203922, 0.203922, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTimeOver" type="Label" parent="TimerOver"]
+margin_left = 265.392
+margin_top = 127.245
+margin_right = 760.392
+margin_bottom = 267.245
+custom_fonts/font = SubResource( 12 )
+text = "Time Over"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelYourMark" type="Label" parent="TimerOver"]
+margin_left = 388.975
+margin_top = 249.255
+margin_right = 600.975
+margin_bottom = 344.255
+custom_fonts/font = SubResource( 13 )
+text = "Your mark: 0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelBestMark" type="Label" parent="TimerOver"]
+margin_left = 392.622
+margin_top = 295.562
+margin_right = 604.622
+margin_bottom = 390.562
+custom_fonts/font = SubResource( 13 )
+text = "Best mark: 0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonGoToMenu" type="Button" parent="TimerOver"]
+pause_mode = 2
+margin_left = 298.239
+margin_top = 434.389
+margin_right = 484.239
+margin_bottom = 483.389
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
+text = "Go to Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonTryAgain" type="Button" parent="TimerOver"]
+pause_mode = 2
+margin_left = 515.366
+margin_top = 433.438
+margin_right = 701.366
+margin_bottom = 482.438
+custom_styles/hover = SubResource( 18 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
+text = "Try again"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="continueTime" from="." to="." method="_on_Game_continueTime"]
+[connection signal="text_changed" from="Answer" to="." method="_on_Answer_text_changed"]
+[connection signal="pressed" from="Check" to="." method="_on_Check_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="AnswerStatus/Timer" to="AnswerStatus" method="_on_Timer_timeout"]
+[connection signal="pressed" from="TimerOver/ButtonGoToMenu" to="." method="_on_ButtonGoToMenu_pressed"]
+[connection signal="pressed" from="TimerOver/ButtonTryAgain" to="." method="_on_ButtonTryAgain_pressed"]
