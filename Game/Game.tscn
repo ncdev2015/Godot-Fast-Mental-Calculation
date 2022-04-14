@@ -1,8 +1,10 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Fonts/Poppins-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Game/Game.gd" type="Script" id=2]
 [ext_resource path="res://Game/AnswerStatus.gd" type="Script" id=3]
+[ext_resource path="res://Sounds/CLOCKTick_Stopwatch-2-_ID-2138__BSB.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/COMCell_Message-2-_ID-1112__BSB.ogg" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 65
@@ -154,7 +156,8 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 60.0
+pause_mode = 2
+wait_time = 10.0
 
 [node name="BestMark" type="Label" parent="."]
 margin_left = 415.776
@@ -219,6 +222,10 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CorrectSound" type="AudioStreamPlayer2D" parent="AnswerStatus"]
+stream = ExtResource( 5 )
+volume_db = -3.832
 
 [node name="TimerOver" type="Node2D" parent="."]
 visible = false
@@ -298,6 +305,11 @@ text = "Try again"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TicTacSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -7.957
+autoplay = true
 
 [connection signal="continueTime" from="." to="." method="_on_Game_continueTime"]
 [connection signal="text_changed" from="Answer" to="." method="_on_Answer_text_changed"]

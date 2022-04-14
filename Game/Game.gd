@@ -128,6 +128,7 @@ func getRandomOperation(from, to):
 
 func _on_Timer_timeout():
 	print("Time Over")
+		
 	$TimerOver.visible = true
 	$Timer.stop()
 	
@@ -145,6 +146,7 @@ func showStatusAnswer(isCorrect, correctAnswer):
 		$AnswerStatus.visible = true
 		$Timer.paused = true
 		$AnswerStatus/Timer.start();
+		$AnswerStatus/CorrectSound.play()
 	else:
 		$AnswerStatus/LabelCorrectAnswer.visible = true
 		$AnswerStatus/LabelCorrectAnswer.text = "Answer:\n" + str(correctAnswer)
