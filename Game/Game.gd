@@ -30,21 +30,23 @@ func _process(delta):
 	$TimerLabel.text = str( int( $Timer.time_left) )
 	
 	if Input.is_action_just_pressed("ui_accept") and not $AnswerStatus.visible:
-		
-		var strAnswer = $Answer.text
-		var newString = ""
-		
-		for c in strAnswer:
-			if c != '\n' or c != ' ':
-				newString += c
-				
-		$Answer.text = newString
-		
-		if len(newString) != 0:
-			_on_Check_pressed()
+		_on_Check_pressed()
 
 func _on_Check_pressed():
+	var strAnswer = $Answer.text
+	var newString = ""
+	
+	for c in strAnswer:
+		if c != '\n' or c != ' ':
+			newString += c
+			
+	$Answer.text = newString
+	
+	if len(newString) == 0:
+		return
+		
 	$Answer.readonly = true
+	
 	numberEquation += 1
 		
 	currentResult = stepify(currentResult, 0.01)
