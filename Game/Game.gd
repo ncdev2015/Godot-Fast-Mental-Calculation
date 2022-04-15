@@ -43,17 +43,6 @@ func _process(delta):
 
 func _on_Check_pressed():
 	$Answer.readonly = true
-	
-	var strAnswer = $Answer.text;
-	var newValue = ""
-	
-	for c in strAnswer:
-		if c != " " and c != '\n':
-			newValue += c
-	
-	if len(newValue) == 0:
-		return
-	
 	numberEquation += 1
 		
 	currentResult = stepify(currentResult, 0.01)
@@ -147,6 +136,7 @@ func showStatusAnswer(isCorrect, correctAnswer):
 		$Timer.paused = true
 		$AnswerStatus/Timer.start();
 		$AnswerStatus/CorrectSound.play()
+		print("ejecutado")
 	else:
 		$AnswerStatus/LabelCorrectAnswer.visible = true
 		$AnswerStatus/LabelCorrectAnswer.text = "Answer:\n" + str(correctAnswer)
