@@ -22,6 +22,8 @@ func _ready():
 	$NumberEquation.text = "Equation " + str(numberEquation)
 	
 	numbersFromTo = getNumberRange(currentLevel)
+	
+	$BestMark.text = "Best Mark: " + str(Globals.bestMark)
 
 func _process(delta):
 	
@@ -136,7 +138,6 @@ func showStatusAnswer(isCorrect, correctAnswer):
 		$Timer.paused = true
 		$AnswerStatus/Timer.start();
 		$AnswerStatus/CorrectSound.play()
-		print("ejecutado")
 	else:
 		$AnswerStatus/LabelCorrectAnswer.visible = true
 		$AnswerStatus/LabelCorrectAnswer.text = "Answer:\n" + str(correctAnswer)
