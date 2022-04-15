@@ -14,6 +14,10 @@ font_data = ExtResource( 1 )
 size = 60
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=6]
+size = 36
+font_data = ExtResource( 1 )
+
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.0313726, 0.533333, 0.980392, 1 )
 
@@ -22,10 +26,6 @@ bg_color = Color( 0.0313726, 0.533333, 0.980392, 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.0980392, 0.552941, 0.956863, 1 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 36
-font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 32
@@ -55,6 +55,10 @@ font_data = ExtResource( 1 )
 size = 32
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=17]
+size = 25
+font_data = ExtResource( 1 )
+
 [sub_resource type="StyleBoxFlat" id=14]
 bg_color = Color( 0, 0.427451, 0.835294, 1 )
 
@@ -63,10 +67,6 @@ bg_color = Color( 0, 0.427451, 0.835294, 1 )
 
 [sub_resource type="StyleBoxFlat" id=16]
 bg_color = Color( 0, 0.372549, 0.729412, 1 )
-
-[sub_resource type="DynamicFont" id=17]
-size = 25
-font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=18]
 bg_color = Color( 0, 0.427451, 0.835294, 1 )
@@ -109,10 +109,10 @@ margin_left = 654.112
 margin_top = 294.828
 margin_right = 888.112
 margin_bottom = 384.828
+custom_fonts/font = SubResource( 6 )
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
 text = "Check"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -157,7 +157,7 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="."]
 pause_mode = 2
-wait_time = 10.0
+wait_time = 60.0
 
 [node name="BestMark" type="Label" parent="."]
 margin_left = 415.776
@@ -282,10 +282,10 @@ margin_left = 298.239
 margin_top = 434.389
 margin_right = 484.239
 margin_bottom = 483.389
+custom_fonts/font = SubResource( 17 )
 custom_styles/hover = SubResource( 14 )
 custom_styles/pressed = SubResource( 15 )
 custom_styles/normal = SubResource( 16 )
-custom_fonts/font = SubResource( 17 )
 text = "Go to Menu"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -297,10 +297,10 @@ margin_left = 515.366
 margin_top = 433.438
 margin_right = 701.366
 margin_bottom = 482.438
+custom_fonts/font = SubResource( 17 )
 custom_styles/hover = SubResource( 18 )
 custom_styles/pressed = SubResource( 19 )
 custom_styles/normal = SubResource( 16 )
-custom_fonts/font = SubResource( 17 )
 text = "Try again"
 __meta__ = {
 "_edit_use_anchors_": false
