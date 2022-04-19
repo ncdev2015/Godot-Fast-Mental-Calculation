@@ -32,12 +32,12 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Title" type="Label" parent="."]
-margin_left = 157.416
-margin_top = 68.6171
-margin_right = 854.416
-margin_bottom = 160.617
+margin_left = 125.053
+margin_top = 67.4185
+margin_right = 917.053
+margin_bottom = 159.418
 custom_fonts/font = SubResource( 1 )
-text = "Fast Mental Calculus"
+text = "Fast Mental Calculation"
 align = 1
 valign = 1
 __meta__ = {
